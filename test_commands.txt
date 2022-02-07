@@ -1,0 +1,45 @@
+Check normal excecutions
+./push_swap 13 14 15
+./push_swap 13 150 123 
+
+Check if 1 input returns nothing;
+./push_swap 3
+./push_swap 5003012 
+
+check if input is not bigger than Max integer and Min integer
+./push_swap 21474836477
+
+check if input is not like 0008
+./push_swap 112 0008
+./push_swap 1 09
+./push_swap 1 009
+./push_swap 1 0009
+
+check if input is a good return: error msg shouldn't be seg fault
+./push_swap ;8
+./push_swap [8
+
+Check if 1 input with character as input: error msg should be Error\n
+./push_swap a
+./push_swap helloo
+
+Check errors with characters as input: error msg is Error\n
+./push_swap 13 14 as 15
+./push_swap 12s 12 123
+./push_swap a13 14 15
+
+Check errors with dupplicate integers: error msg is Error\n
+./push_swap 13 14 13
+./push_swap 1500 15 14 1500
+./push_swap 1 2 3 4 5 6 9 1 93
+
+Does function work with " - , + and spaces ' '"? should return Error\n
+./push_swap 1 2 3+ 4 5
+./push_swap 5+ 1 6 34 1
+./push_swap -3+ 34 12 32
+./push_swap 3        13 34
+./push_swap ----5 9 3
+./push_swap -5- 9 3
+./push_swap 5- 9 3
+./push_swap -5+ 123 115
+./push_swap -5 -873+ 9 3

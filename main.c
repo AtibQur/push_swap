@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:38:10 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/08 13:42:21 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/08 14:00:09 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ int	main(int argc, char **argv)
 	stack_a = ft_create_list(stack_a, argc, argv);
 	if (ft_check_sorted(stack_a) == 1)
 	{
+		if (argc <= 5)
+			sort_small_stack(stack_a, argc);
+		// else
+			// sort_big_stack();
+		
 		printf("a\n");
 	}
 

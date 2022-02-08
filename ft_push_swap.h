@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:40:53 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/08 13:30:45 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/08 16:07:42 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,16 @@ typedef struct node
 
 int		main(int argc, char **argv);
 
-/* Create list */
+/* Create and check list */
 t_node	*insert_tail(t_node *head, int val);
 t_node	*ft_create_list(t_node *stack_a, int argc, char **argv);
+void	sort_small_stack(t_node *stack_a, int argc);
+
+/* Sort small stack */
+void	sort_two_args(t_node *stack_a, t_node *stack_b);
+
+/* all swaps and pushes */
+void	swap_a(t_node *stack_a, t_node *stack_b);
 
 /* Check errors */
 void	ft_check_minmax(long long argv);

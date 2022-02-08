@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 14:58:58 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/04 14:39:23 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/08 13:35:38 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 void	ft_lstadd_front(t_list **lst, t_list *new);
 
 int		ft_atoi(const char *str);
+int		ft_manage_longmin(unsigned long result, int count);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
@@ -68,4 +69,5 @@ size_t	ft_strlen(const char *str);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);
+
 #endif

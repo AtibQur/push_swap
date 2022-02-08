@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 14:40:55 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/07 15:46:43 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/08 13:31:05 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,15 @@ t_node	*insert_tail(t_node *head, int val)
 
 t_node	*ft_create_list(t_node *stack_a, int argc, char **argv)
 {
-	int		val;
-	int		i;
+	long long int		val;
+	int					i;
 
 	i = 1;
 	while (i < argc)
 	{
 		val = ft_atoi(argv[i]);
 		ft_check_dups(stack_a, val);
+		ft_check_minmax(val);
 		stack_a = insert_tail(stack_a, val);
 		i++;
 	}

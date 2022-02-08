@@ -6,32 +6,55 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 14:50:42 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/07 16:30:37 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/08 13:35:11 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int	ft_manage_longmin(unsigned long result, int count)
+{
+	int	value;
+
+	if (count % 2 != 0)
+		value = -1;
+	else
+		value = 1;
+	if (value == -1 && result > 2147483648)
+	{
+		write(2, "Error", 6);
+		exit(0);
+	}
+	else if (value == 1 && result > 2147483647)
+	{
+		write(2, "Error", 6);
+		exit(0);
+	}
+	return (result * value);
+}
+
 int	ft_atoi(const char *str)
 {
-	int	res;
-	int	i;
-	int	sign;
+	int				i;
+	int				count;
+	unsigned long	result;
 
-	res = 0;
 	i = 0;
-	sign = 1;
-	while (*str != '\0' && ((*str >= 9 && *str <= 13) || *str == ' '))
-		str++;
-	if (*str == '-')
+	count = 0;
+	result = 0;
+	while (str[i] == '\t' || str[i] == '\v' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\f' || str[i] == ' ')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		sign *= -1;
-		str++;
-	}
-	else if (*str == '+')
-		str++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = (res * 10) + (str[i] - '0');
+		if (str[i] == '-')
+			count++;
 		i++;
 	}
-	return (res * sign);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = (result * 10) + str[i] - '0';
+		i++;
+	}
+	return (ft_manage_longmin(result, count));
 }

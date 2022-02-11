@@ -1,4 +1,5 @@
-SRCS		= main.c ft_push_swap_utils.c ft_check_errors.c ft_create_list.c
+SRCS		= main.c ft_push_swap_utils.c ft_check_errors.c ft_create_list.c push_swap_instrucs1.c \
+			sort_small_stack.c sort_stack_function.c 
 
 OBJS		= $(SRCS:.c=.o)
 

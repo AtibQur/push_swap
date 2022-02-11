@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sort_stack_function.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/31 12:38:10 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/11 15:52:48 by hqureshi         ###   ########.fr       */
+/*   Created: 2022/02/09 12:09:23 by hqureshi          #+#    #+#             */
+/*   Updated: 2022/02/11 14:26:48 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-int	main(int argc, char **argv)
+void	sort_three_args(t_node *stack_a)
 {
-	t_node	*stack_a;
+	t_node	*tmp;
+	int		head;
+	int		middle;
+	int		tail;
 
-	if (argc <= 1)
-		return (0);
-	stack_a = NULL;
-	ft_check_digits(argv);
-	stack_a = ft_create_list(stack_a, argc, argv);
-	printlist(stack_a);
-	if (ft_check_sorted(stack_a) == 1)
+	if (stack_a)
 	{
-		if (argc <= 5)
-			sort_small_stack(stack_a);
-		// else
-			// sort_big_stack();
+		tmp = stack_a;
+		head = stack_a->value;
+		middle = stack_a->next->value;
+		tail = stack_a->next->next->value;
+		if (head > middle && middle < tail)
+			sa(stack_a);
+		if (head > middle && middle > tail && tail < head)
+		{
+			// sa(stack_a);
+			reverse_rotate_a(stack_a);
+		}
 	}
-	// printlist(stack_a);
-	return (0);
 }

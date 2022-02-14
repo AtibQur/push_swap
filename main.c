@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:38:10 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/14 15:02:17 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/14 18:24:33 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,5 @@ int	main(int argc, char **argv)
 		// else
 			// sort_big_stack();
 	}
-	// printf("Changed list --> ");
-	// printlist(stack_a);
 	return (0);
 }

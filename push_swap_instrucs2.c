@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap_instrucs2.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/31 12:38:10 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/14 15:02:17 by hqureshi         ###   ########.fr       */
+/*   Created: 2022/02/08 15:58:33 by hqureshi          #+#    #+#             */
+/*   Updated: 2022/02/14 17:24:49 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-int	main(int argc, char **argv)
+void	pb(t_node *stack_a, t_node *stack_b)
 {
-	t_node	*stack_a;
+	t_node	*tmp;
+	t_node	*to;
+	t_node	*from;
+	
+	to = stack_b;
+	from = stack_a;
 
-	if (argc <= 1)
-		return (0);
-	stack_a = NULL;
-	ft_check_digits(argv);
-	stack_a = ft_create_list(stack_a, argc, argv);
-	printf("Unchanged list --> ");
-	printlist(stack_a);
-	if (ft_check_sorted(stack_a) == 1)
+	tmp = from;
+	from = from->next;
+	stack_b = from;
+	if (!to)
 	{
-		if (argc <= 6)
-			sort_small_stack(stack_a);
-		// else
-			// sort_big_stack();
+		to = tmp;
+		to->next = NULL;
+		stack_a = to;
 	}
-	// printf("Changed list --> ");
-	// printlist(stack_a);
-	return (0);
+	else
+	{
+		tmp->next = to;
+		stack_a = tmp;
+	}
+	printlist(stack_a);
+	printlist(stack_b);
 }

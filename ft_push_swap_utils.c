@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 14:40:55 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/11 12:46:16 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/14 15:00:34 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	sort_small_stack(t_node *stack_a)
 		sa(stack_a);
 	if (count == 3)
 		sort_three_args(stack_a);
+	if (count == 5)
+		sort_five_args(stack_a, stack_b);
 }
 
 /* count amount of nodes in list */

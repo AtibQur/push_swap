@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 12:09:23 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/11 14:26:48 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/14 16:55:17 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,32 @@
 
 void	sort_three_args(t_node *stack_a)
 {
-	t_node	*tmp;
 	int		head;
 	int		middle;
 	int		tail;
 
-	if (stack_a)
+	head = stack_a->value;
+	middle = stack_a->next->value;
+	tail = stack_a->next->next->value;
+	if (head > middle && middle < tail && tail > head)
+		sa(stack_a);
+	else if (head > middle && middle > tail && tail < head)
 	{
-		tmp = stack_a;
-		head = stack_a->value;
-		middle = stack_a->next->value;
-		tail = stack_a->next->next->value;
-		if (head > middle && middle < tail)
-			sa(stack_a);
-		if (head > middle && middle > tail && tail < head)
-		{
-			// sa(stack_a);
-			reverse_rotate_a(stack_a);
-		}
+		sa(stack_a);
+		reverse_rotate_a(stack_a);
 	}
+	else if (head > middle && middle < tail && tail < head)
+		rotate_a(stack_a);
+	else if (head < middle && middle > tail && tail > head)
+	{
+		sa(stack_a);
+		rotate_a(stack_a);
+	}
+	else if (head < middle && middle > tail && head > tail)
+		reverse_rotate_a(stack_a);
+}
+
+void	sort_five_args(t_node *stack_a, t_node *stack_b)
+{
+	push_b(stack_a, stack_b);
 }

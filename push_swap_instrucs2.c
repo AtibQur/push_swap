@@ -6,60 +6,42 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:58:33 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/14 18:27:40 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/15 16:57:36 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void	pa(t_node *stack_a, t_node *stack_b)
+void	pa(t_node **stack_a, t_node **stack_b)
 {
-	t_node	*tmp;
-	t_node	*to;
-	t_node	*from;
+	t_node	*top;
 
-	to = stack_a;
-	from = stack_b;
-	tmp = from;
-	from = from->next;
-	stack_b = from;
-	if (!to)
-	{
-		to = tmp;
-		to->next = NULL;
-		stack_a = to;
-	}
-	else
-	{
-		tmp->next = to;
-		stack_a = tmp;
-	}
-	printlist(stack_a);
-	printlist(stack_b);
+	if (!*stack_b)
+		return ;
+	top = *stack_b;
+	*stack_b = top->next;
+	top->next = *stack_a;
+	*stack_a = top;
+	write(1, "pa\n", 3);
+	// printf("stack_a ---> ");
+	// printlist(*stack_a);
+	// printf("stack_b ---> ");
+	// printlist(*stack_b);
 }
 
-void	pb(t_node *stack_a, t_node *stack_b)
+void	pb(t_node **stack_a, t_node **stack_b)
 {
-	t_node	*tmp;
-	t_node	*to;
-	t_node	*from;
+	t_node	*top;
 
-	to = stack_b;
-	from = stack_a;
-	tmp = from;
-	from = from->next;
-	stack_a = from;
-	if (!to)
-	{
-		to = tmp;
-		to->next = NULL;
-		stack_b = to;
-	}
-	else
-	{
-		tmp->next = to;
-		stack_b = tmp;
-	}
-	printlist(stack_a);
-	printlist(stack_b);
+	if (!*stack_a)
+		return ;
+	top = *stack_a;
+	*stack_a = top->next;
+	top->next = *stack_b;
+	*stack_b = top;
+	write(1, "pb\n", 3);
+	// printf("stack_a ---> ");
+	// printlist(*stack_a);
+	// printf("stack_b ---> ");
+	// printlist(*stack_b);
 }

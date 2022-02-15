@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:51:30 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/14 17:23:53 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/15 14:53:12 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,18 +85,4 @@ void	reverse_rotate_ab(t_node *stack_a, t_node *stack_b)
 		write(1, "rra\n", 4);
 		write(1, "rrb\n", 4);
 	}
-}
-
-// void	push_a(t_node *stack_a, t_node *stack_b)
-// {
-// 	if (stack_a && stack_b)
-// 	{
-// 		pa(stack_a, stack_b);
-// 		write(1, "pa\n", 3);
-// 	}
-
-void	push_b(t_node *stack_a, t_node *stack_b)
-{
-		pb(stack_a, stack_b);
-		write(1, "pb\n", 3);
 }

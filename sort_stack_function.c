@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 12:09:23 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/14 18:28:55 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/15 17:03:05 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,18 @@ void	sort_three_args(t_node *stack_a)
 
 void	sort_five_args(t_node *stack_a, t_node *stack_b)
 {
-	push_b(stack_a, stack_b);
-	pb(stack_a, stack_b);
+	pb(&stack_a, &stack_b);
+	pb(&stack_a, &stack_b);
+	printf("stack_a before sort");
+	printf("stack_a ---> ");
+	printlist(stack_a);
+	printf("stack_b ---> ");
+	printlist(stack_b);
+	// WAAROM WERKT SORT THREE ARGS HIER NIET?? FIX
+	sa(stack_a);
+	printf("stack_a after sort");
+	printf("stack_a ---> ");
+	printlist(stack_a);
+	printf("stack_b ---> ");
+	printlist(stack_b);
 }

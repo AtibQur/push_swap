@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:40:53 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/14 18:28:06 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/15 16:49:32 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	sort_small_stack(t_node *stack_a);
 /* Sorting functions */
 void	sa(t_node *stack_a);
 void	sb(t_node *stack_b);
-void	pa(t_node *stack_a, t_node *stack_b);
-void	pb(t_node *stack_a, t_node *stack_b);
+void	pa(t_node **stack_a, t_node **stack_b);
+void	pb(t_node **stack_a, t_node **stack_b);
 void	ss(t_node *stack_a, t_node *stack_b);
 void	rab(t_node *stack_a);
 void	rrab(t_node *list);
@@ -49,8 +49,6 @@ void	rotate_b(t_node *stack_b);
 void	reverse_rotate_a(t_node *stack_a);
 void	reverse_rotate_b(t_node *stack_b);
 void	reverse_rotate_ab(t_node *stack_a, t_node *stack_b);
-// void	push_a(t_node *stack_a, t_node *stack_b);
-void	push_b(t_node *stack_a, t_node *stack_b);
 
 /* Check errors */
 void	ft_check_minmax(long long argv);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_instrucs2.c                              :+:      :+:    :+:   */
+/*   push_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:58:33 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/15 16:57:36 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/22 17:36:41 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,6 @@ void	pa(t_node **stack_a, t_node **stack_b)
 	top->next = *stack_a;
 	*stack_a = top;
 	write(1, "pa\n", 3);
-	// printf("stack_a ---> ");
-	// printlist(*stack_a);
-	// printf("stack_b ---> ");
-	// printlist(*stack_b);
 }
 
 void	pb(t_node **stack_a, t_node **stack_b)
@@ -40,8 +36,4 @@ void	pb(t_node **stack_a, t_node **stack_b)
 	top->next = *stack_b;
 	*stack_b = top;
 	write(1, "pb\n", 3);
-	// printf("stack_a ---> ");
-	// printlist(*stack_a);
-	// printf("stack_b ---> ");
-	// printlist(*stack_b);
 }

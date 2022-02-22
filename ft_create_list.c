@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 14:40:55 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/22 15:26:46 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/22 17:33:07 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,13 @@ t_node	*insert_tail(t_node *head, int val)
 	else
 		head = new_node;
 	return (head);
+}
+
+t_node	*new_stack(int value, int index)
+{
+	value = 0;
+	index = 0;
+	return 0;
 }
 
 t_node	*ft_create_list(t_node *stack_a, int argc, char **argv)

@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:38:10 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/15 16:27:39 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/22 15:40:34 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	ft_check_digits(argv);
 	stack_a = ft_create_list(stack_a, argc, argv);
-	printf("Unchanged list --> ");
-	printlist(stack_a);
+	indexing(&stack_a);
+	// printf("Unchanged list --> ");
+	// printlist(stack_a);
 	if (ft_check_sorted(stack_a) == 1)
 	{
 		if (argc <= 6)

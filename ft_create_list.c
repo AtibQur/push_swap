@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 14:40:55 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/08 13:31:05 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/22 15:26:46 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_node	*insert_tail(t_node *head, int val)
 	if (!new_node)
 		return (NULL);
 	new_node->value = val;
+	new_node->index = -1;
 	new_node->next = NULL;
 	while (current_node != NULL && current_node->next != NULL)
 		current_node = current_node->next;

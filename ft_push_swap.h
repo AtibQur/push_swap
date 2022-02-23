@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:40:53 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/23 13:53:47 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/23 15:50:02 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void	ss(t_node *stack_a, t_node *stack_b);
 void	rab(t_node *list);
 void	rrab(t_node *list);
 void	sort_three_args(t_node **stack_a);
-void	sort_five_args(t_node *stack_a, t_node *stack_b);
+void	sort_four_args(t_node **stack_a, int nb);
+void	sort_five_args(t_node *stack_a);
 
 /* all instructions */
 void	swap(int *a, int *b);

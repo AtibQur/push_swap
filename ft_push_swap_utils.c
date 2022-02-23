@@ -6,27 +6,13 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 14:40:55 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/23 14:13:21 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/23 15:17:42 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-/* create small stack and hardcode args till 5 */
-void	sort_small_stack(t_node *stack_a)
-{
-	t_node	*stack_b;
-	int		count;
 
-	stack_b = NULL;
-	count = count_nodes(stack_a);
-	if (count == 2)
-		sa(stack_a);
-	if (count == 3)
-		sort_three_args(&stack_a);
-	if (count == 5)
-		sort_five_args(stack_a, stack_b);
-}
 
 /* count amount of nodes in list */
 int	count_nodes(t_node *head)
@@ -52,7 +38,7 @@ void	printlist(t_node *head)
 	temp = head;
 	while (temp != NULL)
 	{
-		printf("%d %d\n", temp->value, temp->index);
+		printf("stack value -> %d | %d <- stack index\n", temp->value, temp->index);
 		temp = temp->next;
 	}
 	printf("\n");

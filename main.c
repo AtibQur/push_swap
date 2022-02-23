@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:38:10 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/23 15:06:56 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/23 16:03:00 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int argc, char **argv)
 	if (ft_check_sorted(stack_a) == 1)
 	{
 		indexing(&stack_a);
+		// printlist(stack_a);
 		if (argc <= 6)
 			sort_small_stack(stack_a);
 	}

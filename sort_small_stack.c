@@ -1,16 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_stack_function.c                              :+:      :+:    :+:   */
+/*   sort_small_stack.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 12:09:23 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/22 15:07:38 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/23 16:11:14 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
+
+int	search_lowest_num(t_node *stack_a, int nb)
+{
+	t_node	*tmp;
+	int		ret;
+
+	ret = 0;
+	tmp = stack_a;
+	while (tmp)
+	{
+		if (tmp->index == 0 && nb == 0)
+			return (ret);
+		if (tmp->index == 1 && nb == 1)
+			return (ret);
+		tmp = tmp->next;
+		ret++;
+	}
+	return (ret);
+}
+
+void	sort_four_args(t_node **stack_a, int nb)
+{
+	t_node	*stack_b;
+	int		lowest_num;
+
+	stack_b = NULL;
+	lowest_num = search_lowest_num(*stack_a, nb);
+	printf("--> %d\n", lowest_num);
+	//verder gaan
+}
 
 void	sort_three_args(t_node **stack_a)
 {
@@ -41,25 +71,24 @@ void	sort_three_args(t_node **stack_a)
 		reverse_rotate_a(*stack_a);
 }
 
-void	sort_five_args(t_node *stack_a, t_node *stack_b)
+void	sort_five_args(t_node *stack_a)
 {
-	// get_lowest_num(stack_a);
-	pb(&stack_a, &stack_b);
-	// printf("stack_a before sort\n");
-	// printf("stack_a ---> ");
-	// printlist(stack_a);
-	// printf("stack_b ---> ");
-	// printlist(stack_b);
-	// sa(stack_a);
-	// printf("stack_a after sort\n");
-	// printf("stack_a ---> ");
-	// printlist(stack_a);
-	// printf("stack_b ---> ");
-	// printlist(stack_b);
-	// pa(&stack_a, &stack_b);
-	// pa(&stack_a, &stack_b);
-	// printf("stack_a ---> ");
-	// printlist(stack_a);
-	// printf("stack_b ---> ");
-	// printlist(stack_b);
+	stack_a = NULL;
+	return ;
+}
+
+/* create small stack and hardcode args till 5 */
+void	sort_small_stack(t_node *stack_a)
+{
+	int		count;
+
+	count = count_nodes(stack_a);
+	if (count == 2)
+		sa(stack_a);
+	if (count == 3)
+		sort_three_args(&stack_a);
+	if (count == 4)
+		sort_four_args(&stack_a, 0);
+	if (count == 5)
+		sort_five_args(stack_a);
 }

@@ -6,13 +6,13 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 12:09:23 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/22 17:32:44 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/23 15:07:50 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-t_node	*next_index(t_node *list)
+int	next_index(t_node *list)
 {
 	t_node	*lowest;
 	t_node	*temp;
@@ -20,64 +20,58 @@ t_node	*next_index(t_node *list)
 	temp = list;
 	while (temp)
 	{
-		if (temp->index < 0)
+		if (temp->index == -1)
 		{
-			lowest = new_stack(temp->value, temp->index);
+			lowest = temp;
 			break ;
 		}
 		temp = temp->next;
 	}
 	while (list)
 	{
-		if (list->value < lowest->value && list->index < 0)
+		if (list->value < lowest->value && list->index == -1)
 		{
-			lowest->value = list->value;
-			lowest->index = list->index;
+			lowest = list;
 		}
 		list = list->next;
 	}
-	return (lowest);
+	return (lowest->value);
+}
+
+int	size_of_a(t_node *l)
+{
+	size_t	i;
+
+	i = 0;
+	while (l)
+	{
+		l = l->next;
+		i++;
+	}
+	return (i);
 }
 
 void	indexing(t_node **stack)
 {
-	t_node	*lowest;
 	t_node	*temp;
+	int		lowest;
 	int		i;
 	int		size;
 
 	i = 0;
-	lowest = NULL;
 	size = size_of_a(*stack);
 	while (i < size)
 	{
 		temp = *stack;
-		// lowest = next_index(*stack);
+		lowest = next_index(*stack);
 		while (temp)
 		{
-			// if (temp->value == lowest->value)
-			// {
-			// 	temp->index = i;
-			// 	break ;
-			// }
+			if (temp->value == lowest)
+			{
+				temp->index = i;
+				i++;
+			}
 			temp = temp->next;
 		}
-		free(lowest);
-		i++;
 	}
-}
-
-int	size_of_a(t_node *stack)
-{
-	int		count;
-	t_node	*tmp;
-
-	count = 0;
-	tmp = stack;
-	while (tmp != NULL)
-	{
-		count++;
-		tmp = tmp->next;
-	}
-	return (count);
 }

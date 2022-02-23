@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 14:40:55 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/22 12:18:04 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:13:21 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	printlist(t_node *head)
 	temp = head;
 	while (temp != NULL)
 	{
-		printf("%d ", temp->value);
+		printf("%d %d\n", temp->value, temp->index);
 		temp = temp->next;
 	}
 	printf("\n");

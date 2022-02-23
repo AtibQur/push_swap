@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:40:53 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/22 17:10:26 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/23 13:53:47 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int		count_nodes(t_node *head);
 t_node	*insert_tail(t_node *head, int val);
 t_node	*ft_create_list(t_node *stack_a, int argc, char **argv);
 void	sort_small_stack(t_node *stack_a);
-int		size_of_a(t_node *stack);
+int		size_of_a(t_node *l);
 void	indexing(t_node **stack);
-t_node	*new_stack(int value, int index);
+int		next_index(t_node *list);
 
 /* Sorting functions */
 void	sa(t_node *stack_a);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_instrucs1.c                              :+:      :+:    :+:   */
+/*   swap_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:58:33 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/22 12:19:53 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/24 14:19:46 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ void	swap(int *a, int *b)
 	*a = tmp;
 }
 
-void	rab(t_node *list)
+void	rab(t_node **list)
 {
 	t_node	*tmp_first;
 	t_node	*tmp_last;
 	t_node	*stack;
 
-	stack = list;
+	stack = *list;
 	tmp_first = stack;
 	stack = stack->next;
 	tmp_last = stack;
@@ -37,18 +37,17 @@ void	rab(t_node *list)
 	}
 	tmp_last->next = tmp_first;
 	tmp_first->next = NULL;
-	list = stack;
-	// printlist(list);
+	*list = stack;
 }
 
-void	rrab(t_node *list)
+void	rrab(t_node **list)
 {
 	t_node	*tmp_last;
 	t_node	*tmp_new_last;
 
 	if (list)
 	{
-		tmp_last = list;
+		tmp_last = *list;
 		while (tmp_last->next)
 		{
 			if (!tmp_last->next->next)
@@ -56,8 +55,7 @@ void	rrab(t_node *list)
 			tmp_last = tmp_last->next;
 		}
 		tmp_new_last->next = NULL;
-		tmp_last->next = list;
-		list = tmp_last;
-		// printlist(list);
+		tmp_last->next = *list;
+		*list = tmp_last;
 	}
 }

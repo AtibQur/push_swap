@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:40:53 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/23 15:50:02 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/24 15:13:22 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct node
 
 int		main(int argc, char **argv);
 int		count_nodes(t_node *head);
+int		search_lowest_pos(t_node *stack_a, int nb);
 
 /* Create and check list */
 t_node	*insert_tail(t_node *head, int val);
@@ -41,19 +42,19 @@ void	sb(t_node *stack_b);
 void	pa(t_node **stack_a, t_node **stack_b);
 void	pb(t_node **stack_a, t_node **stack_b);
 void	ss(t_node *stack_a, t_node *stack_b);
-void	rab(t_node *list);
-void	rrab(t_node *list);
+void	rab(t_node **list);
+void	rrab(t_node **list);
 void	sort_three_args(t_node **stack_a);
 void	sort_four_args(t_node **stack_a, int nb);
-void	sort_five_args(t_node *stack_a);
+void	sort_five_args(t_node **stack_a);
 
 /* all instructions */
 void	swap(int *a, int *b);
-void	rotate_a(t_node *stack_a);
-void	rotate_b(t_node *stack_b);
-void	reverse_rotate_a(t_node *stack_a);
-void	reverse_rotate_b(t_node *stack_b);
-void	reverse_rotate_ab(t_node *stack_a, t_node *stack_b);
+void	rotate_a(t_node **stack_a);
+void	rotate_b(t_node **stack_b);
+void	reverse_rotate_a(t_node **stack_a);
+void	reverse_rotate_b(t_node **stack_b);
+void	reverse_rotate_ab(t_node **stack_a, t_node **stack_b);
 
 /* Check errors */
 void	ft_check_minmax(long long argv);

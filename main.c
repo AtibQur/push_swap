@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:38:10 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/28 11:03:10 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/28 14:40:45 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ int	main(int argc, char **argv)
 	if (argc <= 1)
 		return (0);
 	stack_a = NULL;
-	ft_check_digits(argv);
+	ft_check_digits(argv, &stack_a);
 	stack_a = ft_create_list(stack_a, argc, argv);
-	printf("%d arg count\n", size_of_list(stack_a));
 	if (ft_check_sorted(stack_a) == 1)
 	{
 		indexing(&stack_a);
@@ -30,5 +29,7 @@ int	main(int argc, char **argv)
 		else if (argc > 6)
 			sort_big_stack(&stack_a, size_of_list(stack_a));
 	}
+	else
+		free_stack(&stack_a);
 	return (0);
 }

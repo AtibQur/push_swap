@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 14:50:42 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/08 13:35:11 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/28 14:46:51 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ int	ft_manage_longmin(unsigned long result, int count)
 		value = 1;
 	if (value == -1 && result > 2147483648)
 	{
-		write(2, "Error", 6);
+		write(2, "Error\n", 6);
 		exit(0);
 	}
 	else if (value == 1 && result > 2147483647)
 	{
-		write(2, "Error", 6);
+		write(2, "Error\n", 6);
 		exit(0);
 	}
 	return (result * value);

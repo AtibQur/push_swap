@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 11:34:55 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/28 11:02:01 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/28 15:57:25 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	sort_big_stack(t_node **stack_a, int size)
 	i = 0;
 	stack_b = NULL;
 	max_bitwise = size_maxbitwise(size - 1);
-	printlist(*stack_a); //print
 	while (i < max_bitwise)
 	{
 		j = 0;
@@ -50,6 +49,6 @@ void	sort_big_stack(t_node **stack_a, int size)
 			pa(stack_a, &stack_b);
 		i++;
 	}
-	printlist(*stack_a); //print
+	free_stack(stack_a);
 	exit (0);
 }

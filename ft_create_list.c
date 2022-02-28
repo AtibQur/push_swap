@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 14:40:55 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/23 13:18:44 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/28 14:53:20 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,59 @@ t_node	*ft_create_list(t_node *stack_a, int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		val = ft_atoi(argv[i]);
+		val = ps_atoi(argv[i], &stack_a);
 		ft_check_dups(stack_a, val);
-		ft_check_minmax(val);
 		stack_a = insert_tail(stack_a, val);
 		i++;
 	}
 	return (stack_a);
+}
+
+int	ps_manage_longmin(unsigned long result, int count, t_node **stack_a)
+{
+	int	value;
+
+	if (count % 2 != 0)
+		value = -1;
+	else
+		value = 1;
+	if (value == -1 && result > 2147483648)
+	{
+		write(2, "Error\n", 6);
+		free_stack(stack_a);
+		exit(0);
+	}
+	else if (value == 1 && result > 2147483647)
+	{
+		write(2, "Error\n", 6);
+		free_stack(stack_a);
+		exit(0);
+	}
+	return (result * value);
+}
+
+int	ps_atoi(const char *str, t_node **stack_a)
+{
+	int				i;
+	int				count;
+	unsigned long	result;
+
+	i = 0;
+	count = 0;
+	result = 0;
+	while (str[i] == '\t' || str[i] == '\v' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\f' || str[i] == ' ')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			count++;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = (result * 10) + str[i] - '0';
+		i++;
+	}
+	return (ps_manage_longmin(result, count, stack_a));
 }

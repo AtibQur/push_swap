@@ -6,11 +6,28 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 14:40:55 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/25 10:05:23 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/28 13:55:44 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
+
+/* free stacks */
+void	free_stack(t_node **stack)
+{
+	t_node	*temp;
+
+	if (!stack)
+	{
+		while (stack)
+		{
+			temp = (*stack)->next;
+			free(temp);
+			*stack = temp;
+		}
+		stack = NULL;
+	}
+}
 
 /* count amount of nodes in list */
 int	count_nodes(t_node *head)

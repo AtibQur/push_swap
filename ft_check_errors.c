@@ -6,22 +6,13 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 10:37:17 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/08 13:38:07 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/28 14:45:08 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void	ft_check_minmax(long long argv)
-{
-	if ((argv < INT_MIN || argv > INT_MAX))
-	{
-		write(2, "Error", 6);
-		exit (0);
-	}
-}
-
-void	ft_check_input(char *val)
+void	ft_check_input(char *val, t_node **stack_a)
 {
 	int	i;
 	int	ret;
@@ -33,6 +24,7 @@ void	ft_check_input(char *val)
 		if (val[i] == '-' || val[i] == '+' || val[i - 1] == '0')
 		{
 			write(2, "Error\n", 6);
+			free_stack(stack_a);
 			exit (0);
 		}
 		i++;
@@ -40,11 +32,12 @@ void	ft_check_input(char *val)
 	if (ret > 0)
 	{
 		write(2, "Error\n", 6);
+		free_stack(stack_a);
 		exit (0);
 	}
 }
 
-void	ft_check_digits(char **argv)
+void	ft_check_digits(char **argv, t_node **stack_a)
 {
 	int	i;
 	int	j;
@@ -58,12 +51,13 @@ void	ft_check_digits(char **argv)
 			if (argv[i][0] == '-' || argv[i][0] == '0')
 			{
 				j++;
-				ft_check_input(&argv[i][j]);
+				ft_check_input(&argv[i][j], stack_a);
 				break ;
 			}
 			if (ft_isdigit(argv[i][j]) == 0)
 			{
 				write(2, "Error\n", 6);
+				free_stack(stack_a);
 				exit (0);
 			}
 			j++;
@@ -79,6 +73,7 @@ void	ft_check_dups(t_node *stack_a, int val)
 		if (stack_a->value == val)
 		{
 			write(2, "Error\n", 6);
+			free_stack(&stack_a);
 			exit (0);
 		}
 		stack_a = stack_a->next;

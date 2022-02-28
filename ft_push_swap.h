@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:40:53 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/28 09:40:08 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/28 14:51:51 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	indexing(t_node **stack);
 int		search_lowest_pos(t_node *stack_a, int nb);
 int		size_of_list(t_node *l);
 int		next_index(t_node *list);
+int		ps_manage_longmin(unsigned long result, int count, t_node **stack_a);
+int		ps_atoi(const char *str, t_node **stack_a);
 
 /* Sorting functions */
 void	sa(t_node *stack_a);
@@ -50,6 +52,7 @@ int		count_nodes(t_node *head);
 void	sort_three_args(t_node **stack_a);
 void	sort_four_args(t_node **stack_a, int nb);
 void	sort_five_args(t_node **stack_a);
+void	free_stack(t_node **stack);
 
 /* all instructions */
 void	swap(int *a, int *b);
@@ -61,10 +64,9 @@ void	reverse_rotate_ab(t_node **stack_a, t_node **stack_b);
 
 /* Check errors */
 int		ft_check_sorted(t_node *stack);
-void	ft_check_minmax(long long argv);
-void	ft_check_digits(char **argv);
+void	ft_check_digits(char **argv, t_node **stack_a);
 void	ft_check_dups(t_node *stack_a, int val);
-void	ft_check_input(char *val);
+void	ft_check_input(char *val, t_node **stack_a);
 
 /* remove at end functions*/
 void	printlist(t_node *head);

@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 12:09:23 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/23 15:07:50 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/25 15:13:35 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	next_index(t_node *list)
 	return (lowest->value);
 }
 
-int	size_of_a(t_node *l)
+int	size_of_list(t_node *l)
 {
 	size_t	i;
 
@@ -59,7 +59,7 @@ void	indexing(t_node **stack)
 	int		size;
 
 	i = 0;
-	size = size_of_a(*stack);
+	size = size_of_list(*stack);
 	while (i < size)
 	{
 		temp = *stack;

@@ -6,13 +6,11 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 14:40:55 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/23 15:17:42 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/25 10:05:23 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-
-
 
 /* count amount of nodes in list */
 int	count_nodes(t_node *head)

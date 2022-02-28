@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 15:58:33 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/24 14:19:46 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/28 10:47:12 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,14 @@ void	rab(t_node **list)
 {
 	t_node	*tmp_first;
 	t_node	*tmp_last;
-	t_node	*stack;
 
-	stack = *list;
-	tmp_first = stack;
-	stack = stack->next;
-	tmp_last = stack;
+	tmp_first = *list;
+	tmp_last = *list;
 	while (tmp_last->next != NULL)
-	{
 		tmp_last = tmp_last->next;
-	}
-	tmp_last->next = tmp_first;
+	*list = tmp_first->next;
 	tmp_first->next = NULL;
-	*list = stack;
+	tmp_last->next = tmp_first;
 }
 
 void	rrab(t_node **list)

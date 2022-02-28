@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:40:53 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/24 15:13:22 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/02/28 09:40:08 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ typedef struct node
 }	t_node;
 
 int		main(int argc, char **argv);
-int		count_nodes(t_node *head);
-int		search_lowest_pos(t_node *stack_a, int nb);
 
 /* Create and check list */
 t_node	*insert_tail(t_node *head, int val);
 t_node	*ft_create_list(t_node *stack_a, int argc, char **argv);
+void	sort_big_stack(t_node **stack_a, int size);
 void	sort_small_stack(t_node *stack_a);
-int		size_of_a(t_node *l);
 void	indexing(t_node **stack);
+int		search_lowest_pos(t_node *stack_a, int nb);
+int		size_of_list(t_node *l);
 int		next_index(t_node *list);
 
 /* Sorting functions */
@@ -44,6 +44,9 @@ void	pb(t_node **stack_a, t_node **stack_b);
 void	ss(t_node *stack_a, t_node *stack_b);
 void	rab(t_node **list);
 void	rrab(t_node **list);
+
+/* Sort small stack + utils */
+int		count_nodes(t_node *head);
 void	sort_three_args(t_node **stack_a);
 void	sort_four_args(t_node **stack_a, int nb);
 void	sort_five_args(t_node **stack_a);
@@ -57,8 +60,8 @@ void	reverse_rotate_b(t_node **stack_b);
 void	reverse_rotate_ab(t_node **stack_a, t_node **stack_b);
 
 /* Check errors */
-void	ft_check_minmax(long long argv);
 int		ft_check_sorted(t_node *stack);
+void	ft_check_minmax(long long argv);
 void	ft_check_digits(char **argv);
 void	ft_check_dups(t_node *stack_a, int val);
 void	ft_check_input(char *val);

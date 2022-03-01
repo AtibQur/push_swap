@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:38:10 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/03/01 11:46:45 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/03/01 11:52:43 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,6 @@ int	main(int argc, char **argv)
 			sort_big_stack(&stack_a, size_of_list(stack_a));
 	}
 	else
-	{
-		write(2, "Error\n", 6);
 		free_stack(&stack_a);
-	}
 	return (0);
 }

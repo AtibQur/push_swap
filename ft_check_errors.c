@@ -6,36 +6,11 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 10:37:17 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/28 14:45:08 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:47:46 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-
-void	ft_check_input(char *val, t_node **stack_a)
-{
-	int	i;
-	int	ret;
-
-	i = 0;
-	ret = 0;
-	while (val[i])
-	{
-		if (val[i] == '-' || val[i] == '+' || val[i - 1] == '0')
-		{
-			write(2, "Error\n", 6);
-			free_stack(stack_a);
-			exit (0);
-		}
-		i++;
-	}
-	if (ret > 0)
-	{
-		write(2, "Error\n", 6);
-		free_stack(stack_a);
-		exit (0);
-	}
-}
 
 void	ft_check_digits(char **argv, t_node **stack_a)
 {
@@ -51,8 +26,6 @@ void	ft_check_digits(char **argv, t_node **stack_a)
 			if (argv[i][0] == '-' || argv[i][0] == '0')
 			{
 				j++;
-				ft_check_input(&argv[i][j], stack_a);
-				break ;
 			}
 			if (ft_isdigit(argv[i][j]) == 0)
 			{

@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:40:53 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/28 14:51:51 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:47:59 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	reverse_rotate_ab(t_node **stack_a, t_node **stack_b);
 int		ft_check_sorted(t_node *stack);
 void	ft_check_digits(char **argv, t_node **stack_a);
 void	ft_check_dups(t_node *stack_a, int val);
-void	ft_check_input(char *val, t_node **stack_a);
 
 /* remove at end functions*/
 void	printlist(t_node *head);

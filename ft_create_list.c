@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 14:40:55 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/28 14:53:20 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:00:34 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,12 @@ t_node	*ft_create_list(t_node *stack_a, int argc, char **argv)
 		val = ps_atoi(argv[i], &stack_a);
 		ft_check_dups(stack_a, val);
 		stack_a = insert_tail(stack_a, val);
+		if (stack_a == NULL)
+		{
+			write(2, "Error\n", 6);
+			free_stack(&stack_a);
+			exit (0);
+		}
 		i++;
 	}
 	return (stack_a);

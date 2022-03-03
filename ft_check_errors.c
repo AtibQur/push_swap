@@ -17,10 +17,17 @@ void	ft_check_input(char *val, t_node **stack_a)
 	int	i;
 
 	i = 0;
+	if (val[i] == '-' && val[i + 1] == '\0')
+	{
+			write(2, "Error\n", 6);
+			free_stack(stack_a);
+			exit (0);
+	}
+	if (val[i] == '-') 
+		i++;
 	while (val[i])
 	{
-		if (val[i] == '-' || val[i] == '+' || val[i - 1] == '0' \
-		|| ft_isdigit(val[i]) == 0)
+		if (ft_isdigit(val[i]) == 0)
 		{
 			write(2, "Error\n", 6);
 			free_stack(stack_a);
@@ -41,9 +48,8 @@ void	ft_check_digits(char **argv, t_node **stack_a)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (argv[i][0] == '-' || argv[i][0] == '0')
+			if (argv[i][0] == '-')
 			{
-				j++;
 				ft_check_input(&argv[i][j], stack_a);
 				break ;
 			}

@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 11:34:55 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/03/07 15:51:55 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/03/07 15:58:35 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ int	size_maxbitwise(int max_num)
 
 	max_bits = 0;
 	while ((max_num >> max_bits) != 0)
-	{
 		max_bits++;
-	}	
 	return (max_bits);
 }
 

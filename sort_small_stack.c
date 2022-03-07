@@ -6,7 +6,7 @@
 /*   By: hqureshi <hqureshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 12:09:23 by hqureshi          #+#    #+#             */
-/*   Updated: 2022/02/28 15:57:11 by hqureshi         ###   ########.fr       */
+/*   Updated: 2022/03/07 15:56:52 by hqureshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,7 @@ void	sort_five_args(t_node **stack_a)
 		reverse_rotate_a(stack_a);
 	}
 	if (lowest_pos == 5)
-	{
 		reverse_rotate_a(stack_a);
-		reverse_rotate_a(stack_a);
-	}
 	pb(stack_a, &stack_b);
 	sort_four_args(stack_a, 1);
 	pa(stack_a, &stack_b);
@@ -115,6 +112,7 @@ void	sort_small_stack(t_node *stack_a)
 	int		count;
 
 	count = count_nodes(stack_a);
+	printlist(stack_a);
 	if (count == 2)
 		sa(stack_a);
 	if (count == 3)
@@ -123,6 +121,7 @@ void	sort_small_stack(t_node *stack_a)
 		sort_four_args(&stack_a, 0);
 	if (count == 5)
 		sort_five_args(&stack_a);
+	printlist(stack_a);
 	free_stack(&stack_a);
 	exit(0);
 }

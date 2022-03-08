@@ -56,3 +56,5 @@ Check for 3 arguments -> max 5 combinations, 2 commands to sort
 ./push_swap 3 1 2
 ./push_swap 1 3 2
 ./push_swap 2 3 1
+
+ARG=`ruby -e "puts (0..499).to_a.shuffle.join(' ')"`; ./push_swap $ARG

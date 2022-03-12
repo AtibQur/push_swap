@@ -5,8 +5,7 @@ SRCS		= main.c ft_check_errors.c ft_create_list.c indexing.c push_functions.c pu
 OBJS		= $(SRCS:.c=.o)
 
 CC			= gcc
-CFLAGS		= -Wall -Werror -Wextra 
-# -g -fsanitize=address
+CFLAGS		= -Wall -Werror -Wextra -g -fsanitize=address
 NAME		= push_swap
 LIBFT		= ./libft/libft.a
 

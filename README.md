@@ -1,5 +1,5 @@
 # <h1 align="center"><a href="https://github.com/AtibQur/push_swap/blob/main/push_swap.pdf" target="_blank">Push_swap</a> 🔄 🔀</h1>
-<p><img align="right" src="./score.png" alt="Score" width="125" height="125"></p>
+<p><img align="right" src="./img/score.png" alt="Score" width="125" height="125"></p>
 <h2> Description Push_swap</h2>   
 This project involves sorting data on 2 stacks (stack A & stack B), with a limited set of instructions, and the smallest number of moves. To make this happen, you will have to manipulate various sorting algorithms and choose the most appropriate solution for optimized data sorting. 
 <br><br>

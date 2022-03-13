@@ -14,7 +14,7 @@
 # define FT_PUSH_SWAP_H
 
 # include "limits.h"
-# include "./libft/libft.h"
+# include "../libft/libft.h"
 # include "stdio.h"
 
 typedef struct node
